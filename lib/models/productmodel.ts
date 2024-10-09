@@ -19,6 +19,7 @@ const productSchema = new mongoose.Schema(
     timestamps: true,
   }
 )
+
 export type Product = {
     _id?: string
     name: string
@@ -35,3 +36,8 @@ export type Product = {
     colors?: []
     sizes?: []
   }
+
+  const ProductModel =
+  mongoose.models.Product || mongoose.model('Product', productSchema)
+
+export default ProductModel
